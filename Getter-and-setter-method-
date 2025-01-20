@@ -1,0 +1,59 @@
+# Getter-and-setter-method-
+coding:
+class Student {
+    private int rollNumber;
+    private String name;
+    private int age;
+    public int getRollNumber() {
+        return rollNumber;
+    }
+    public void setRollNumber(int rollNumber) {
+        this.rollNumber = rollNumber;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public int getAge() {
+        return age;
+    }
+    public void setAge(int age) {
+        if (age > 0) { 
+            this.age = age;
+        } else {
+            System.out.println("Invalid age! Age must be positive.");
+        }
+    }
+    public void displayDetails() {
+        System.out.println("Roll Number: " + rollNumber);
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Student student = new Student();
+        student.setRollNumber(101);
+        student.setName("Alice");
+        student.setAge(20);
+        System.out.println("Student Details:");
+        student.displayDetails();
+        System.out.println("\nFetching details using getter methods:");
+        System.out.println("Name: " + student.getName());
+        System.out.println("Roll Number: " + student.getRollNumber());
+        System.out.println("Age: " + student.getAge());
+    }
+}
+
+output:
+Student Details:
+Roll Number: 101
+Name: Alice
+Age: 20
+
+Fetching details using getter methods:
+Name: Alice
+Roll Number: 101
+Age: 20
